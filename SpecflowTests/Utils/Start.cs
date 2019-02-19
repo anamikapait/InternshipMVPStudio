@@ -11,6 +11,7 @@ using static SpecflowPages.CommonMethods;
 
 namespace SpecflowTests.Utils
 {
+    [Binding]
     public class Start : Driver
     {
         [BeforeScenario]
