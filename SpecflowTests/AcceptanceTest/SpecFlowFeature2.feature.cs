@@ -138,48 +138,6 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Check if user could able add a Skill without choosing the Skill level")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SpecFlowFeature2")]
-        public virtual void CheckIfUserCouldAbleAddASkillWithoutChoosingTheSkillLevel()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check if user could able add a Skill without choosing the Skill level", ((string[])(null)));
-#line 22
-    this.ScenarioSetup(scenarioInfo);
-#line 23
-    testRunner.Given("I clicked on the Skill tab under Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 24
-    testRunner.When("I enter a new Skill", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 25
-    testRunner.When("I didnot choose the Skill level", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 26
-    testRunner.Then("a popup should appear on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 27
-    testRunner.Then("the Skill should not be displayed on my listings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Check if user could able to cancel the Skill")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SpecFlowFeature2")]
-        public virtual void CheckIfUserCouldAbleToCancelTheSkill()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check if user could able to cancel the Skill", ((string[])(null)));
-#line 29
-    this.ScenarioSetup(scenarioInfo);
-#line 30
-    testRunner.Given("I clicked on the Skill tab under Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 31
-    testRunner.When("I enter a new Skill", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 32
-    testRunner.When("I clicked on the cancel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 33
-    testRunner.Then("the Skill should not be displayed on my listings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
     }
 }
 #pragma warning restore

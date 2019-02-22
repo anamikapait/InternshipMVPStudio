@@ -19,16 +19,3 @@ Scenario: Check if user could able to add a Skill
     When I delete the added Skill
     Then that Skill should be deleted from the listings
     
-    Scenario: Check if user could able add a Skill without choosing the Skill level
-    Given I clicked on the Skill tab under Profile page
-    When I enter a new Skill
-    When I didnot choose the Skill level
-    Then a popup should appear on the screen 
-    Then the Skill should not be displayed on my listings
-    
-    Scenario: Check if user could able to cancel the Skill
-    Given I clicked on the Skill tab under Profile page
-    When I enter a new Skill
-    When I clicked on the cancel button
-    Then the Skill should not be displayed on my listings
-	

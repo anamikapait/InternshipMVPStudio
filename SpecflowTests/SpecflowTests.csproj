@@ -89,6 +89,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="AcceptanceTest\AddCertification.cs" />
     <Compile Include="AcceptanceTest\AddEducation.cs" />
     <Compile Include="AcceptanceTest\AddLanguage.cs" />
     <Compile Include="AcceptanceTest\AddSkill.cs" />
@@ -107,6 +108,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SpecFlowFeature3.feature</DependentUpon>
     </Compile>
+    <Compile Include="AcceptanceTest\SpecFlowFeature4.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpecFlowFeature4.feature</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Start.cs" />
   </ItemGroup>
@@ -122,6 +128,10 @@
     <None Include="AcceptanceTest\SpecFlowFeature3.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SpecFlowFeature3.feature.cs</LastGenOutput>
+    </None>
+    <None Include="AcceptanceTest\SpecFlowFeature4.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SpecFlowFeature4.feature.cs</LastGenOutput>
     </None>
     <None Include="App.config" />
     <None Include="packages.config">

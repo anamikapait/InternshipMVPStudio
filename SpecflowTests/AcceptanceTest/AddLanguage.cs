@@ -34,19 +34,13 @@ namespace SpecflowTests.AcceptanceTest
             //Click on Language Level
             Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/div/div[2]/select")).Click();
 
-            //Choose the language level
+            //Choose the Language level
             IWebElement Lang = Driver.driver.FindElements(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/div/div[2]/select/option"))[1];
             Lang.Click();
 
             //Click on Add button
             Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/div/div[3]/input[1]")).Click();
         }
-
-        /*[When(@"I enter a new language")]
-        public void WhenIEnterANewLanguage()
-        {
-            ScenarioContext.Current.Pending();
-        }*/
 
         [When(@"I edit the added language")]
         public void WhenIEditTheAddedLanguage()
@@ -70,18 +64,6 @@ namespace SpecflowTests.AcceptanceTest
             Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[3]/span[2]/i")).Click();
            
         }
-        
-        /*[When(@"I didnot choose the language level")]
-        public void WhenIDidnotChooseTheLanguageLevel()
-        {
-            ScenarioContext.Current.Pending();
-        }
-        
-        [When(@"I clicked on the cancel button")]
-        public void WhenIClickedOnTheCancelButton()
-        {
-            ScenarioContext.Current.Pending();
-        }*/
 
         [Then(@"that language should be displayed on my listings")]
         public void ThenThatLanguageShouldBeDisplayedOnMyListings()
@@ -171,17 +153,5 @@ namespace SpecflowTests.AcceptanceTest
                 CommonMethods.test.Log(LogStatus.Pass, "Test Passed, Deleted  Language Successfully");
             }
         }
-        
-        /*[Then(@"a popup should appear on the screen")]
-        public void ThenAPopupShouldAppearOnTheScreen()
-        {
-            ScenarioContext.Current.Pending();
-        }
-        
-        [Then(@"the language should not be displayed on my listings")]
-        public void ThenTheLanguageShouldNotBeDisplayedOnMyListings()
-        {
-            ScenarioContext.Current.Pending();
-        }*/
     }
 }
