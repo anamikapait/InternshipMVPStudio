@@ -84,12 +84,12 @@ namespace SpecflowTests.AcceptanceTest
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Check if user could able to add a education")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Check if user could able to add a education")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SpecFlowFeature3")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
-        public virtual void CheckIfUserCouldAbleToAddAEducation()
+        public virtual void _1CheckIfUserCouldAbleToAddAEducation()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check if user could able to add a education", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1 Check if user could able to add a education", new string[] {
                         "mytag"});
 #line 7
 this.ScenarioSetup(scenarioInfo);
@@ -104,11 +104,11 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Check if user could able to edit the education")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 Check if user could able to edit the education")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SpecFlowFeature3")]
-        public virtual void CheckIfUserCouldAbleToEditTheEducation()
+        public virtual void _2CheckIfUserCouldAbleToEditTheEducation()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check if user could able to edit the education", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2 Check if user could able to edit the education", ((string[])(null)));
 #line 12
  this.ScenarioSetup(scenarioInfo);
 #line 13
@@ -122,11 +122,11 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Check if user could able to delete the education")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("3 Check if user could able to delete the education")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SpecFlowFeature3")]
-        public virtual void CheckIfUserCouldAbleToDeleteTheEducation()
+        public virtual void _3CheckIfUserCouldAbleToDeleteTheEducation()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check if user could able to delete the education", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3 Check if user could able to delete the education", ((string[])(null)));
 #line 17
     this.ScenarioSetup(scenarioInfo);
 #line 18
