@@ -88,20 +88,18 @@ namespace SpecflowTests.AcceptanceTest
                 CommonMethods.ExtentReports();
                 Thread.Sleep(1000);
                 CommonMethods.test = CommonMethods.extent.StartTest("Add a Education");
-
-                Thread.Sleep(1000);
-                string ExpectedValue = "Royal University";
-                string ActualValue = Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td[1]")).Text;
-                Thread.Sleep(500);
-                if (ExpectedValue == ActualValue)
+                IWebElement tableElement = Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table"));
+                System.Collections.Generic.IList<IWebElement> allTableValues = tableElement.FindElements(By.TagName("td"));
+                foreach (IWebElement row in allTableValues)
                 {
-                    CommonMethods.test.Log(LogStatus.Pass, "Test Passed, Added a Education Successfully");
-                    // SaveScreenShotClass.SaveScreenshot(Driver.driver, "EducationAdded");
+                    if (row.Text.Equals("Royal University"))
+                    {
+                        CommonMethods.test.Log(LogStatus.Pass, "Test Passed, Added a Education Successfully");
+                        return;
+                    }
                 }
-
-                else
-                    CommonMethods.test.Log(LogStatus.Fail, "Test Failed");
-
+                CommonMethods.test.Log(LogStatus.Fail, "Test Failed");
+              
             }
             catch (Exception e)
             {
@@ -117,20 +115,18 @@ namespace SpecflowTests.AcceptanceTest
                 //Start the Reports
                 CommonMethods.ExtentReports();
                 Thread.Sleep(1000);
-                CommonMethods.test = CommonMethods.extent.StartTest("Add a Education");
-
-                Thread.Sleep(1000);
-                string ExpectedValue = "Auckland University";
-                string ActualValue = Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[1]")).Text;
-                Thread.Sleep(500);
-                if (ExpectedValue == ActualValue)
+                CommonMethods.test = CommonMethods.extent.StartTest("updated Education");
+                IWebElement tableElement = Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table"));
+                System.Collections.Generic.IList<IWebElement> allTableValues = tableElement.FindElements(By.TagName("td"));
+                foreach (IWebElement row in allTableValues)
                 {
-                    CommonMethods.test.Log(LogStatus.Pass, "Test Passed, Added a Education Successfully");
-                    // SaveScreenShotClass.SaveScreenshot(Driver.driver, "EducationAdded");
+                    if (row.Text.Equals("Auckland University"))
+                    {
+                        CommonMethods.test.Log(LogStatus.Pass, "Test Passed, Updated a Education Successfully");
+                        return;
+                    }
                 }
-
-                else
-                    CommonMethods.test.Log(LogStatus.Fail, "Test Failed");
+                CommonMethods.test.Log(LogStatus.Fail, "Test Failed");
 
             }
             catch (Exception e)

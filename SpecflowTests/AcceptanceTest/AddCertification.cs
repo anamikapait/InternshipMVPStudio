@@ -52,7 +52,7 @@ namespace SpecflowTests.AcceptanceTest
             //Clear Certification/Award textfield
             IWebElement CertificationTextfield = Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/table/tbody/tr/td/div/div/div[1]/input"));
             CertificationTextfield.Clear();
-            CertificationTextfield.SendKeys("ISTQB Ajile certificate");
+            CertificationTextfield.SendKeys("ISTQB Agile certificate");
 
             //Click on Update button
             Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/table/tbody/tr/td/div/span/input[1]")).Click();
@@ -73,20 +73,18 @@ namespace SpecflowTests.AcceptanceTest
                 CommonMethods.ExtentReports();
                 Thread.Sleep(1000);
                 CommonMethods.test = CommonMethods.extent.StartTest("Add a Certification");
-
-                Thread.Sleep(1000);
-                string ExpectedValue = "ISTQB Foundation Certificate";
-                string ActualValue = Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td[1]")).Text;
-                Thread.Sleep(500);
-                if (ExpectedValue == ActualValue)
+                IWebElement tableElement = Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table"));
+                System.Collections.Generic.IList<IWebElement> allTableValues = tableElement.FindElements(By.TagName("td"));
+                foreach (IWebElement row in allTableValues)
                 {
-                    CommonMethods.test.Log(LogStatus.Pass, "Test Passed, Added a Certification Successfully");
-                    // SaveScreenShotClass.SaveScreenshot(Driver.driver, "CertificationAdded");
+                    if (row.Text.Equals("ISTQB Foundation Certificate"))
+                    {
+                        CommonMethods.test.Log(LogStatus.Pass, "Test Passed, Added a Certification Successfully");
+                        return;
+                    }
                 }
-
-                else
-                    CommonMethods.test.Log(LogStatus.Fail, "Test Failed");
-
+                CommonMethods.test.Log(LogStatus.Fail, "Test Failed");
+               
             }
             catch (Exception e)
             {
@@ -102,21 +100,19 @@ namespace SpecflowTests.AcceptanceTest
                 //Start the Reports
                 CommonMethods.ExtentReports();
                 Thread.Sleep(1000);
-                CommonMethods.test = CommonMethods.extent.StartTest("Add a Certification");
-
-                Thread.Sleep(1000);
-                string ExpectedValue = "ISTQB Ajile certificate";
-                string ActualValue = Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[1]")).Text;
-                Thread.Sleep(500);
-                if (ExpectedValue == ActualValue)
+                CommonMethods.test = CommonMethods.extent.StartTest("Update a Certification");
+                IWebElement tableElement = Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table"));
+                System.Collections.Generic.IList<IWebElement> allTableValues = tableElement.FindElements(By.TagName("td"));
+                foreach (IWebElement row in allTableValues)
                 {
-                    CommonMethods.test.Log(LogStatus.Pass, "Test Passed, Added a Certification Successfully");
-                    // SaveScreenShotClass.SaveScreenshot(Driver.driver, "CertificationAdded");
+                    if (row.Text.Equals("ISTQB Agile certificate"))
+                    {
+                        CommonMethods.test.Log(LogStatus.Pass, "Test Passed, updated a Certification Successfully");
+                        return;
+                    }
                 }
-
-                else
-                    CommonMethods.test.Log(LogStatus.Fail, "Test Failed");
-
+                CommonMethods.test.Log(LogStatus.Fail, "Test Failed");
+              
             }
             catch (Exception e)
             {

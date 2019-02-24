@@ -73,18 +73,17 @@ namespace SpecflowTests.AcceptanceTest
                 Thread.Sleep(1000);
                 CommonMethods.test = CommonMethods.extent.StartTest("Add a Skill");
 
-                Thread.Sleep(1000);
-                string ExpectedValue = "Dancing";
-                string ActualValue = Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td[1]")).Text;
-                Thread.Sleep(500);
-                if (ExpectedValue == ActualValue)
+                IWebElement tableElement = Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table"));
+                System.Collections.Generic.IList<IWebElement> allTableValues = tableElement.FindElements(By.TagName("td"));
+                foreach (IWebElement row in allTableValues)
                 {
-                    CommonMethods.test.Log(LogStatus.Pass, "Test Passed, Added a Skill Successfully");
-                    // SaveScreenShotClass.SaveScreenshot(Driver.driver, "LanguageAdded");
+                    if (row.Text.Equals("Dancing"))
+                    {
+                        CommonMethods.test.Log(LogStatus.Pass, "Test Passed, Added a Skill Successfully");
+                        return;
+                    }
                 }
-
-                else
-                    CommonMethods.test.Log(LogStatus.Fail, "Test Failed");
+                CommonMethods.test.Log(LogStatus.Fail, "Test Failed");
 
             }
             catch (Exception e)
@@ -102,19 +101,17 @@ namespace SpecflowTests.AcceptanceTest
                 CommonMethods.ExtentReports();
                 Thread.Sleep(1000);
                 CommonMethods.test = CommonMethods.extent.StartTest("Add a Skill");
-
-                Thread.Sleep(1000);
-                string ExpectedValue = "Singing";
-                string ActualValue = Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[1]")).Text;
-                Thread.Sleep(500);
-                if (ExpectedValue == ActualValue)
+                IWebElement tableElement = Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table"));
+                System.Collections.Generic.IList<IWebElement> allTableValues = tableElement.FindElements(By.TagName("td"));
+                foreach (IWebElement row in allTableValues)
                 {
-                    CommonMethods.test.Log(LogStatus.Pass, "Test Passed, Added a Skill Successfully");
-                    // SaveScreenShotClass.SaveScreenshot(Driver.driver, "SkillAdded");
+                    if (row.Text.Equals("Singing"))
+                    {
+                        CommonMethods.test.Log(LogStatus.Pass, "Test Passed, updated Skill Successfully");
+                        return;
+                    }
                 }
-
-                else
-                    CommonMethods.test.Log(LogStatus.Fail, "Test Failed");
+                CommonMethods.test.Log(LogStatus.Fail, "Test Failed");
 
             }
             catch (Exception e)
